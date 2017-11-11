@@ -46,18 +46,21 @@ def index(request):
         return render_to_response('analytics/index.html',{'columns':columns, 'data':data})
 
     elif request.method == "POST" :
-        filepath = request.session['filepath']
-        domain  = request.POST['domain'].split()
-        eqn     = request.POST['equation']
+        xaxis  = request.POST['xaxis']
+        yaxis     = request.POST['yaxis']
+        print(xaxis,yaxis)
+        '''
         domain = range( int(domain[0]), int(domain[1]) )
         y = [ eval(eqn) for x in domain ]
         title = 'y = ' + eqn
 
         plot = figure(title= title , x_axis_label= 'X-Axis', y_axis_label= 'Y- Axis', plot_width =400, plot_height =400)
         plot.line(domain, y, legend= 'f(x)', line_width = 2)
-        script, div = components(plot)
+        script, div = components(plot)'''
 
-        return render_to_response( 'analytics/index.html', {'script' : script , 'div' : div} )
+        #return render_to_response( 'analytics/index.html', {'script' : script , 'div' : div} )
+        return render_to_response( 'analytics/index.html' )
+
 
 
     else:

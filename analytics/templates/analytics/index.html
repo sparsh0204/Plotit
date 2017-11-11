@@ -71,11 +71,37 @@
     </tbody>
   </table>
 </div>-->
-{{ data | safe }}
+<!--{{ data | safe }}-->
 <br>
-          {% for column in columns %}
-            {{column}}
-          {% endfor %}
+<form method="post" action >
+<div class="dropdown" name="xaxis" id="xaxis">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Y - Axis
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      {% for column in columns %}
+      <li>{{column}}</li>
+    {% endfor %}
+    </ul>
+  </div><br>
+  <div class="dropdown">
+    <label for="xaxis">Select list:</label>
+
+      <select class="dropdown-menu" name="xaxis" id="xaxis">
+        {% for column in columns %}
+    <option>{{column}}</option>
+    {% endfor %}
+  </select>
+
+    </div>
+<br><br>
+    <div class="row">
+      <div class="col s12">
+        <button class="button">Draw Graph</button>
+      </div>
+    </div>
+
+  </form>
+
           </div>
 
 
