@@ -1,0 +1,24 @@
+{% load bootstrap3 %}
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+<html>
+<head>
+  <title>Upload File</title>
+</head>
+  <body>
+    <form enctype="multipart/form-data" method="post">
+      {% csrf_token %}
+      {% bootstrap_form data_form %}
+      {% buttons %}
+
+        <button type="submit" class="btn btn-primary">
+          {% bootstrap_icon "star" %} Submit
+        </button>
+      {% endbuttons %}
+    </form>
+  </body>
+</html>

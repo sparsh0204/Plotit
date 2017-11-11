@@ -1,0 +1,92 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>DAP Graph Plotter</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.0.min.css" rel="stylesheet" type="text/css">
+        <link href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.0.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+        <link rel="stylesheet" href="http://www.askprateek.com/style.css">
+    </head>
+    <body>
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col s12 m6">
+          <!--  <form method="post" action >
+
+            <div class="row">
+              <div class="col s12">
+                <label for="equation">Polynomial Equation - f(x)</label>
+                <input type ="text" id = "equation" name = "equation">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s12">
+                <label for="domain">Domain of Equation</label>
+                <input type = "text" id = "domain" name = "domain">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s12">
+                <button class="button">Draw Graph</button>
+              </div>
+            </div>
+
+          </form>
+          <div class="container">
+  <h2>Example data</h2>
+  <p>The .table-striped class adds zebra-stripes to a table:</p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>-->
+{{ data | safe }}
+<br>
+          {% for column in columns %}
+            {{column}}
+          {% endfor %}
+          </div>
+
+
+          <div class="col s12 m6 center-align">
+            {{ div | safe }}
+          </div>
+
+        </div>
+      </div>
+        <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.0.min.js"></script>
+        <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.0.min.js"></script>
+        {{ script | safe }}
+    </body>
+</html>
