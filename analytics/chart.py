@@ -3,9 +3,11 @@ from bokeh.sampledata.autompg import autompg as df
 from bokeh.plotting import figure, output_file, show
 from bokeh.resources import CDN
 from bokeh.embed import components
+import pandas as pd
+import numpy as np
 
-
-
+def datetime(x):
+    return np.array(x, dtype=np.datetime64)
 # prepare some data, a Pandas GroupBy object in this case
 def create_chart(df,xaxis,yaxis,graphtype):
     if graphtype=="Line Graph":
@@ -21,8 +23,10 @@ def create_chart(df,xaxis,yaxis,graphtype):
 
 # create a scatter chart
 def lineplot(df,x_axis,y_axis,title):
-    plot = figure(title= title , x_axis_label=x_axis , y_axis_label= y_axis, plot_width =400, plot_height =400)
-    plot.line(df[x_axis], df[y_axis], line_width = 2)
+    plot = figure(title= title ,x_axis_type="datetime", x_axis_label=x_axis , y_axis_label= y_axis, plot_width =400, plot_height =400)
+    #x=df[x_axis].values.tolist()
+    #y=df[y_axis].values.tolist()
+    plot.line(datetime(df[x_axis]), df[y_axis], line_width = 2)
     return plot
 
 def scatter(df,x_axis,y_axis,title):
