@@ -60,8 +60,8 @@ def index(request):
             if xaxis == yaxis:
                 message = "X - Axis and Y - Axis must not be same"
                 return render_to_response( 'analytics/index.html' ,{'columns':columns, 'data':data, 'message':message})
-                print(xaxis,yaxis)
-                plot = create_chart(df,xaxis,yaxis,graphtype)
+                
+            plot = create_chart(df,xaxis,yaxis,graphtype)
         #plot = Scatter(df, x=xaxis, y=yaxis,color=xaxis , title="HP vs MPG",xlabel="Miles Per Gallon", ylabel="Horsepower")
             script, div = components(plot)
             return graph_display(request,plot)

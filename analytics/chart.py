@@ -13,7 +13,7 @@ def create_chart(df,xaxis,yaxis,graphtype):
     elif graphtype=="Scatter Plot":
         plot = scatter(df,xaxis,yaxis,xaxis+" vs "+yaxis)
     elif graphtype == "Bar Chat":
-        plot = Bar(df,xaxis,yaxis,xaxis+" vs "+yaxis)
+        plot = BoxPlotchart(df,xaxis,yaxis,xaxis+" vs "+yaxis)
     else:
         pass
     return plot
@@ -34,14 +34,14 @@ def scatter(df,x_axis,y_axis,title):
     return plot
 
 def Bar(df,x_axis,y_axis,title):
-    plot = Bar(df, label=x_axis, values=y_axis, title=title, color=x_axis, xlabel= x_axis,
-            ylabel= y_axis, plot_width =width, plot_height =height)
+    plot = Bar(df, label=x_axis, values=y_axis, title=title, color=x_axis)
 #    script, div = components(plot)
     return plot
 
-def BoxPlot(df,x_axis,y_axis,title):
-    plot = BoxPlot(df, values=y_axis, label=x_axis, title=title, color=x_axis, xlabel= x_label, outliers=True,
-            ylabel= y_axis, plot_width =width, plot_height =height,  whisker_color=x_axis)
+def BoxPlotchart(df,x_axis,y_axis,title):
+    print(x_axis,y_axis,title)
+    plot = BoxPlot(df, values=y_axis, label=x_axis, title=title, color=x_axis, xlabel= x_axis, outliers=True,
+            ylabel= y_axis,  whisker_color=x_axis)
 #    script, div = components(plot)
     return plot
 
