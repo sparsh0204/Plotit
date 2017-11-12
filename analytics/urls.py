@@ -5,6 +5,6 @@ app_name = 'analytics'
 
 urlpatterns = [
         url(r'^file_upload$', views.file_upload, name='file_upload'),
-        url(r'^uploaded$', views.uploaded, name='uploaded'),
+        url(r'^graph_display$', views.graph_display, name='graph_display'),
         url(r'^index$', views.index, name='index'),
     ]
